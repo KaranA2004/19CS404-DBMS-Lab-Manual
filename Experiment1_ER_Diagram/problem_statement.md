@@ -123,7 +123,9 @@ Relationship: Taught by Not standard; assumes indirect mapping via faculty
 
 ## Extension (Prerequisite / Billing):
 Prerequisite Modeling:
-Could be modeled with a recursive relationship on Course: Relationship: Requires Cardinality: Many-to-Many (a course can have many prerequisites and be a prerequisite for many others)
+Could be modeled with a recursive relationship on Course: 
+Relationship: 
+Requires Cardinality: Many-to-Many (a course can have many prerequisites and be a prerequisite for many others)
 
 ## Design Choices:
 Use of separate entities for Advising, Enrollment, and Class helps normalize many-to-many relationships and maintain relational integrity. Department as a central entity provides a logical way to group students, faculty, and courses.
