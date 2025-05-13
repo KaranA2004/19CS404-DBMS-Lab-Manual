@@ -60,7 +60,6 @@ University
 ## Entities and Attributes:
 
 **Student**
-
 Attributes: StudentID, FirstName, LastName, DateOfBirth, Email, PhoneNumber, EnrollmentDate, DepartmentID.
 
 **Faculty**
