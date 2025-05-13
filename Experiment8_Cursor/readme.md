@@ -79,6 +79,48 @@ END;
 **Output:**  
 The program should display the employee details or an error message.
 
+**Program**
+```
+SET SERVEROUTPUT ON;
+
+DECLARE
+    -- Declare a cursor for employee names and designations
+    CURSOR emp_cursor IS
+        SELECT emp_name, designation FROM employees;
+
+    -- Variables to store fetched data
+    v_emp_name employees.emp_name%TYPE;
+    v_designation employees.designation%TYPE;
+
+    -- Flag to check if any rows were fetched
+    v_found BOOLEAN := FALSE;
+
+BEGIN
+    OPEN emp_cursor;
+
+    LOOP
+        FETCH emp_cursor INTO v_emp_name, v_designation;
+        EXIT WHEN emp_cursor%NOTFOUND;
+        
+        v_found := TRUE;
+        DBMS_OUTPUT.PUT_LINE('Name: ' || v_emp_name || ', Designation: ' || v_designation);
+    END LOOP;
+
+    CLOSE emp_cursor;
+
+    IF NOT v_found THEN
+        RAISE NO_DATA_FOUND;
+    END IF;
+
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('No employee records found.');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Unexpected error: ' || SQLERRM);
+END;
+/
+```
+
 ---
 
 ### **Question 2: Parameterized Cursor with Exception Handling**
