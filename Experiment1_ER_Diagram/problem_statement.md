@@ -55,50 +55,41 @@ University
 ![image](https://github.com/user-attachments/assets/f19ca1fb-376f-49d6-8440-5f07eb001c2f)
 
 ## Entities and Attributes:
-Student
+
+**Student**
 Attributes: StudentID, FirstName, LastName, DateOfBirth, Email, PhoneNumber, EnrollmentDate, DepartmentID.
-Faculty
+**Faculty**
 Attributes: FacultyID, FirstName, LastName, Email, PhoneNumber, HireDate, DepartmentID.
-## Department
-
+**Department**
 Attributes: DepartmentID, DepartmentName, Location.
-## Course
-
+**Course**
 Attributes: CourseID, CourseName, CourseCode, Credits, DepartmentID.
-## Enrollment
-
+**Enrollment**
 Attributes: EnrollmentID, StudentID, CourseID, EnrollmentDate, Grade.
-## Class
-
+**Class**
 Attributes: ClassID, CourseID, FacultyID, Semester, Year, Schedule.
-## Advising
-
+**Advising**
 Attributes: AdvisingID, StudentID, FacultyID, AdvisingDate.
 
 ## Relationships and Constraints:
 
-## Student–Advising–Faculty:
+**Student–Advising–Faculty:**
 Relationship: Advises Cardinality: Many-to-Many (each student can have multiple advisors, each faculty can advise multiple students) Participation: Total on Advising
-## Student–Enrollment–Course:
+**Student–Enrollment–Course**
 Relationship: Enrolled in Cardinality: Many-to-Many Participation: Total on Enrollment
-
-## Course–Class–Faculty:
+**Course–Class–Faculty:**
 Relationship: Teaches Cardinality: Many-to-Many (each course can be taught in multiple classes, each faculty can teach multiple classes)
-
-## Course–Department:
+**Course–Department:**
 Relationship: Offered by Cardinality: Many-to-One (Each course belongs to one department)
-
-## Student–Department:
+**Student–Department:**
 Relationship: Belongs to Cardinality: Many-to-One
-
-## Faculty–Department:
+**Faculty–Department:**
 Relationship: Belongs to Cardinality: Many-to-One
-
-## Class–Course:
+**Class–Course:**
 Relationship: Includes Cardinality: Many-to-One
-
-## Enrollment–Class:
+**Enrollment–Class:**
 Relationship: Taught by Not standard; assumes indirect mapping via faculty
+
 ## Extension (Prerequisite / Billing):
 Prerequisite Modeling:
 Could be modeled with a recursive relationship on Course: Relationship: Requires Cardinality: Many-to-Many (a course can have many prerequisites and be a prerequisite for many others)
