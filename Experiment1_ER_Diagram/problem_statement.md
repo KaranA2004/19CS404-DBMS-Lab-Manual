@@ -49,7 +49,7 @@ Design a database for patient management, appointments, medical records, and bil
 ## Name : Karan 
 ## Reg No : 212222060113
 
-**Scenario Chosen:**
+## Scenario Chosen:
 
 University
 
